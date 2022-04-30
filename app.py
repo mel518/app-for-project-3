@@ -6,13 +6,14 @@ from matplotlib import projections
 #from zmq import ROUTER
 from bson import json_util
 from flask_cors import CORS
+import sys
 
 # Create an instance of Flask
 app = Flask(__name__)
 CORS(app)
 
 # Use PyMongo to establish Mongo connection
-mongo = PyMongo(app, uri="mongodb://localhost:27017/project3")
+mongo = PyMongo(app, uri="mongodb+srv://mel518:databasepass@cluster0.atxjb.mongodb.net/project3?retryWrites=true&w=majority")
 
 @app.route("/")
 def homepage():
